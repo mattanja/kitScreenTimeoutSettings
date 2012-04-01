@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ChargingStatus">
+        <item>Not connected</item>
+        <item>USB</item>
+        <item>Charger</item>
+    </string-array>
+    
+</resources>
