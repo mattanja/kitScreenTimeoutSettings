@@ -9,7 +9,7 @@ package de.kernetics.android.screenTimeoutSettings;
 
 public final class R {
     public static final class array {
-        public static final int ChargingStatus=0x7f040000;
+        public static final int ChargingStatus=0x7f050000;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -38,15 +38,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int maskDrawable=0x7f010004;
     }
     public static final class color {
-        public static final int actionbar_title_color=0x7f050000;
-        public static final int main_contrast=0x7f050002;
-        public static final int main_light=0x7f050001;
-        public static final int main_lightest=0x7f050003;
+        public static final int actionbar_title_color=0x7f060000;
+        public static final int main_contrast=0x7f060002;
+        public static final int main_light=0x7f060001;
+        public static final int main_lightest=0x7f060003;
     }
     public static final class dimen {
-        public static final int actionbar_compat_button_home_width=0x7f060002;
-        public static final int actionbar_compat_button_width=0x7f060001;
-        public static final int actionbar_compat_height=0x7f060000;
+        public static final int actionbar_compat_button_home_width=0x7f070002;
+        public static final int actionbar_compat_button_width=0x7f070001;
+        public static final int actionbar_compat_height=0x7f070000;
     }
     public static final class drawable {
         public static final int actionbar_compat_item=0x7f020000;
@@ -62,17 +62,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_menu_share=0x7f02000a;
     }
     public static final class id {
-        public static final int actionbar_compat=0x7f070000;
-        public static final int actionbar_compat_item_refresh=0x7f070003;
-        public static final int actionbar_compat_item_refresh_progress=0x7f070002;
-        public static final int actionbar_compat_title=0x7f070001;
-        public static final int button1=0x7f070009;
-        public static final int checkBoxAutoSetScreenBrightnessWhenCharging=0x7f070005;
-        public static final int editTextStatus=0x7f070007;
-        public static final int menu_about=0x7f07000a;
-        public static final int menu_refresh=0x7f070004;
-        public static final int seekBarScreenBrightnessWhenCharging=0x7f070006;
-        public static final int spinnerCurrentStatus=0x7f070008;
+        public static final int actionbar_compat=0x7f080000;
+        public static final int actionbar_compat_item_refresh=0x7f080003;
+        public static final int actionbar_compat_item_refresh_progress=0x7f080002;
+        public static final int actionbar_compat_title=0x7f080001;
+        public static final int checkBoxAutoSetScreenBrightnessWhenCharging=0x7f080006;
+        public static final int editTextDischargingTimeout=0x7f080009;
+        public static final int menu_about=0x7f08000a;
+        public static final int menu_refresh=0x7f080004;
+        public static final int seekBarScreenBrightnessWhenCharging=0x7f080007;
+        public static final int spinnerCurrentStatus=0x7f080005;
+        public static final int textViewChargingTimeout=0x7f080008;
     }
     public static final class layout {
         public static final int actionbar_compat=0x7f030000;
@@ -80,30 +80,39 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int main=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
+        public static final int main=0x7f0b0000;
     }
     public static final class string {
-        public static final int alternate_title=0x7f080001;
-        public static final int app_name=0x7f080000;
-        public static final int checkboxAutoSetScreenBrightness=0x7f080003;
-        public static final int editTextStatusHint=0x7f080005;
-        public static final int menu_about=0x7f080002;
-        public static final int prompt_unknown_status=0x7f080006;
-        public static final int sectionPluggedSettings=0x7f080007;
-        public static final int sectionUnpluggedSettings=0x7f080008;
-        public static final int textviewChargingScreenBrightness=0x7f080004;
+        public static final int alternate_title=0x7f090001;
+        public static final int app_name=0x7f090000;
+        public static final int checkboxAutoSetScreenBrightness=0x7f090003;
+        public static final int editTextStatusHint=0x7f090005;
+        public static final int emptyTime=0x7f09000a;
+        public static final int menu_about=0x7f090002;
+        public static final int prompt_unknown_status=0x7f090006;
+        public static final int sectionInfo=0x7f090009;
+        public static final int sectionPluggedSettings=0x7f090007;
+        public static final int sectionUnpluggedSettings=0x7f090008;
+        public static final int textviewChargingScreenBrightness=0x7f090004;
     }
     public static final class style {
-        public static final int ActionBar=0x7f090008;
-        public static final int ActionBarCompat=0x7f090001;
-        public static final int ActionBarCompatHomeItem=0x7f090007;
-        public static final int ActionBarCompatItem=0x7f090006;
-        public static final int ActionBarCompatItemBase=0x7f090002;
-        public static final int ActionBarCompatProgressIndicator=0x7f090003;
-        public static final int ActionBarCompatTitle=0x7f090005;
-        public static final int ActionBarCompatTitleBase=0x7f090004;
-        public static final int ActionBarTitle=0x7f090009;
-        public static final int AppTheme=0x7f090000;
+        public static final int ActionBar=0x7f0a0009;
+        public static final int ActionBarCompat=0x7f0a0001;
+        public static final int ActionBarCompatHomeItem=0x7f0a0007;
+        public static final int ActionBarCompatItem=0x7f0a0006;
+        public static final int ActionBarCompatItemBase=0x7f0a0002;
+        public static final int ActionBarCompatProgressIndicator=0x7f0a0003;
+        public static final int ActionBarCompatTitle=0x7f0a0005;
+        public static final int ActionBarCompatTitleBase=0x7f0a0004;
+        public static final int ActionBarTitle=0x7f0a000a;
+        public static final int AppTheme=0x7f0a0000;
+        /**  <item name="android:textStyle">bold</item> 
+         */
+        public static final int sectionStyle=0x7f0a0008;
+    }
+    public static final class xml {
+        public static final int screen_timeout_preferenceheaders=0x7f040000;
+        public static final int screen_timeout_settings=0x7f040001;
     }
     public static final class styleable {
         /** Attributes that can be used with a AppTheme.

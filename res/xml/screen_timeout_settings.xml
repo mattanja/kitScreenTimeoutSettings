@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <Preference android:key="testPreference" android:title="Test" android:summary="00:00:00"/>
+    
+
+</PreferenceScreen>

@@ -16,12 +16,18 @@
 
 package de.kernetics.android.screenTimeoutSettings;
 
+import java.util.List;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.view.Menu;
@@ -31,21 +37,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends PreferenceActivity {
     //private TimePicker timePickerScreenTimeoutWhenCharging;
     //private EditText editTextStatus;
-	private Spinner spinnerCurrentStatus;
+	//private Spinner spinnerCurrentStatus;
 
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        
+        //setContentView(R.layout.main);
 
         //timePickerScreenTimeoutWhenCharging = (TimePicker)findViewById(R.id.timePickerScreenTimeoutWhenCharging);
         //timePickerScreenTimeoutWhenCharging.setIs24HourView(DateFormat.is24HourFormat(getApplicationContext()));
-        spinnerCurrentStatus = (Spinner)findViewById(R.id.spinnerCurrentStatus);
-        ArrayAdapter<CharSequence> statusAdapter = ArrayAdapter.createFromResource(this, R.array.ChargingStatus, android.R.layout.simple_spinner_item);
-        statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCurrentStatus.setAdapter(statusAdapter);
+//        spinnerCurrentStatus = (Spinner)findViewById(R.id.spinnerCurrentStatus);
+//        ArrayAdapter<CharSequence> statusAdapter = ArrayAdapter.createFromResource(this, R.array.ChargingStatus, android.R.layout.simple_spinner_item);
+//        statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerCurrentStatus.setAdapter(statusAdapter);
         
         BroadcastReceiver batteryChangedReceiver = new BroadcastReceiver() {
         	@Override
@@ -84,7 +92,7 @@ public class MainActivity extends ActionBarActivity {
     				Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, newTimeout);        			
         		}
         		
-				spinnerCurrentStatus.setSelection(statusSelection, true);
+				//spinnerCurrentStatus.setSelection(statusSelection, true);
         		//editTextStatus.setText(statusText);
         	}
         };
@@ -93,36 +101,55 @@ public class MainActivity extends ActionBarActivity {
         //getApplicationContext().registerReceiver(null, new IntentFilter(EDIT));
         
         // Intent: public static final String ACTION_BATTERY_CHANGED
+        
+        this.startPreferenceFragment(new PrefsFragment(), false);
+
+    }
+    
+//    @Override
+//    public void onBuildHeaders(List<Header> target) {
+//    	//super.onBuildHeaders(target);
+//    	loadHeadersFromResource(R.xml.screen_timeout_preferenceheaders, target);
+//    }
+    
+    public static class PrefsFragment extends PreferenceFragment {
+    	@Override
+    	public void onCreate(Bundle savedInstanceState) {
+    		super.onCreate(savedInstanceState);
+    		
+    		PreferenceManager.setDefaultValues(getActivity(), R.xml.screen_timeout_settings, false);
+    		
+    		addPreferencesFromResource(R.xml.screen_timeout_settings);
+    	}
     }
     
     @Override
     protected void onResume() {
-    	// TODO Auto-generated method stub
     	super.onResume();
     }
     
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.main, menu);
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.main, menu);
+//
+//        // Calling super after populating the menu is necessary here to ensure that the
+//        // action bar helpers have a chance to handle this event.
+//        return super.onCreateOptionsMenu(menu);
+//    }
 
-        // Calling super after populating the menu is necessary here to ensure that the
-        // action bar helpers have a chance to handle this event.
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                Toast.makeText(this, "Tapped home", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.menu_about:
-            	Toast.makeText(this, "About", Toast.LENGTH_LONG).show();
-            	break;
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+//                Toast.makeText(this, "Tapped home", Toast.LENGTH_SHORT).show();
+//                break;
+//
+//            case R.id.menu_about:
+//            	Toast.makeText(this, "About", Toast.LENGTH_LONG).show();
+//            	break;
+//
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 }

@@ -149,11 +149,10 @@ public class SimpleMenuItem implements MenuItem {
         return false;
     }
 
-    @Override
-    public MenuItem setOnActionExpandListener(OnActionExpandListener onActionExpandListener) {
-        // Noop
-        return this;
-    }
+    public MenuItem setOnActionExpandListener(OnActionExpandListener listener) {
+		// Noop
+		return this;
+	}
 
     public MenuItem setIntent(Intent intent) {
         // Noop

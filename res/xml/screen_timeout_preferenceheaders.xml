@@ -1,0 +1,16 @@
+<preference-headers
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <header android:fragment="de.kernetics.android.screenTimeoutSettings.MainActivity$PrefsFragment"
+            android:icon="@drawable/actionbar_compat_item"
+            android:title="Einstellungen"
+            android:summary="An example of some preferences." />
+
+    <header android:icon="@drawable/ic_action_share"
+            android:title="Intent"
+            android:summary="Launches an Intent.">
+        <intent android:action="android.intent.action.VIEW"
+                android:data="http://www.android.com" />
+    </header>
+
+</preference-headers>

@@ -25,4 +25,6 @@
     <string name="prompt_unknown_status">Unknown</string>
     <string name="sectionPluggedSettings">Charging settings</string>
     <string name="sectionUnpluggedSettings">Discharging settings</string>
+    <string name="sectionInfo">Info</string>
+    <string name="emptyTime">00:00:00</string>
 </resources>

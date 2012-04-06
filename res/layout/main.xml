@@ -13,21 +13,41 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="fill_horizontal|fill_vertical"
     android:orientation="vertical"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp" >
+    android:paddingRight="16dp"
+    android:isScrollContainer="true"
+    >
 
     <TextView
-        style="@android:style/TextAppearance.Holo.Medium"
+        style="@style/sectionStyle"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="@string/sectionInfo" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/main_contrast" />
+
+    <Spinner
+        android:id="@+id/spinnerCurrentStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/prompt_unknown_status" />
+
+    <TextView
+        android:layout_width="match_parent"
         android:gravity="center_vertical"
         android:text="@string/sectionPluggedSettings"
-        android:textAllCaps="true"/>
+        style="@style/sectionStyle"
+        android:layout_height="wrap_content"/>
 
     <View
         android:layout_width="match_parent"
@@ -50,37 +70,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/editTextStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/editTextStatusHint" />
-
-    <Spinner
-        android:id="@+id/spinnerCurrentStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:prompt="@string/prompt_unknown_status" />
-
     <TextView
-        style="@android:style/TextAppearance.Holo.Medium"
+        android:id="@+id/textViewChargingTimeout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:minHeight="46dp"
+        android:text="@string/emptyTime"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/sectionUnpluggedSettings"
-        android:textAllCaps="true" />
+        android:textAllCaps="true" style="@style/sectionStyle"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/main_contrast" />
 
-    <Button
-        android:id="@+id/button1"
+    <EditText
+        android:id="@+id/editTextDischargingTimeout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/prompt_unknown_status" />
+        android:ems="10"
+        android:inputType="time"
+        android:text="@string/emptyTime"
+        />
 
 </LinearLayout>
