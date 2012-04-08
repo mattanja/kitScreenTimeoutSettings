@@ -18,10 +18,13 @@ package de.kernetics.android.screenTimeoutSettings;
 
 import java.util.List;
 
+import de.kernetics.android.preference.BrightnessPreference;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -30,17 +33,14 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
 
+/**
+ * 
+ * @author Mattanja Kern <mattanja.kern@kernetics.de>
+ *
+ */
 public class MainActivity extends PreferenceActivity {
-    //private TimePicker timePickerScreenTimeoutWhenCharging;
-    //private EditText editTextStatus;
-	//private Spinner spinnerCurrentStatus;
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,7 +87,7 @@ public class MainActivity extends PreferenceActivity {
 				}
         		
         		if (previousTimeout != newTimeout) {
-    				Toast.makeText(MainActivity.this, String.format("Previous sceen-timeout: %s", previousTimeout), Toast.LENGTH_SHORT).show();
+    				Toast.makeText(MainActivity.this, String.format("Previous sceen-timeout: %s (%s)", previousTimeout, statusSelection), Toast.LENGTH_SHORT).show();
             		Toast.makeText(MainActivity.this, String.format("New sceen-timeout: %s", newTimeout), Toast.LENGTH_LONG).show();
     				Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, newTimeout);        			
         		}
@@ -102,25 +102,17 @@ public class MainActivity extends PreferenceActivity {
         
         // Intent: public static final String ACTION_BATTERY_CHANGED
         
-        this.startPreferenceFragment(new PrefsFragment(), false);
+        //this.startPreferenceFragment(PrefsFragment.instantiate(getApplicationContext(), "PrefsFragment"), false);
+        //this.addPreferencesFromResource(R.xml.screen_timeout_settings);
+        //this.startWithFragment(fragmentName, args, resultTo, resultRequestCode)
+        //this.startPreferenceFragment( R.xml.screen_timeout_settings, false);
 
     }
     
-//    @Override
-//    public void onBuildHeaders(List<Header> target) {
-//    	//super.onBuildHeaders(target);
-//    	loadHeadersFromResource(R.xml.screen_timeout_preferenceheaders, target);
-//    }
-    
-    public static class PrefsFragment extends PreferenceFragment {
-    	@Override
-    	public void onCreate(Bundle savedInstanceState) {
-    		super.onCreate(savedInstanceState);
-    		
-    		PreferenceManager.setDefaultValues(getActivity(), R.xml.screen_timeout_settings, false);
-    		
-    		addPreferencesFromResource(R.xml.screen_timeout_settings);
-    	}
+    @Override
+    public void onBuildHeaders(List<Header> target) {
+    	//super.onBuildHeaders(target);
+    	loadHeadersFromResource(R.xml.screen_timeout_preferenceheaders, target);
     }
     
     @Override
@@ -152,4 +144,54 @@ public class MainActivity extends PreferenceActivity {
 //        }
 //        return super.onOptionsItemSelected(item);
 //    }
+    
+    /**
+     * 
+     * @author kern
+     *
+     */
+    public static class ScreenTimeoutSettings extends PreferenceFragment // implements Preference.OnPreferenceChangeListener
+	{
+		private BrightnessPreference pluggedBrightness;
+		private Preference pluggedTimeout;
+		private BrightnessPreference unpluggedBrightness;
+		private Preference unpluggedTimeout;
+
+		private static final String PLUGGED_BRIGHTNESS_MODE = "pluggedBrightnessMode";
+		private static final String PLUGGED_BRIGHTNESS = "pluggedBrightness";
+		private static final String PLUGGED_TIMEOUT = "pluggedTimeout";
+		private static final String UNPLUGGED_BRIGHTNESS_MODE = "unpluggedBrightnessMode";
+		private static final String UNPLUGGED_BRIGHTNESS = "unpluggedBrightness";
+		private static final String UNPLUGGED_TIMEOUT = "unpluggedTimeout";
+
+		@Override
+		public void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			
+	 		PreferenceManager.setDefaultValues(getActivity(), R.xml.screen_timeout_settings, false);
+	
+	 		this.addPreferencesFromResource(R.xml.screen_timeout_settings);
+	 		
+	 		pluggedBrightness = (BrightnessPreference)findPreference(PLUGGED_BRIGHTNESS);
+	 		pluggedTimeout = (Preference)findPreference(PLUGGED_TIMEOUT);
+	 		unpluggedBrightness = (BrightnessPreference)findPreference(UNPLUGGED_BRIGHTNESS);
+	 		unpluggedTimeout = (Preference)findPreference(UNPLUGGED_TIMEOUT);
+
+	 		//this.restorePreviousSettings();
+	 		
+	 		int b = pluggedBrightness.getBrightness();
+	 		pluggedBrightness.getBrightnessMode(Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
+	 	}
+
+//		private void restorePreviousSettings() {
+//			SharedPreferences settings = getPreferenceManager().getSharedPreferences();
+//			pluggedBrightness.setMode(settings.getInt(PLUGGED_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL));
+//			pluggedBrightness.setBrightness(settings.getInt(PLUGGED_BRIGHTNESS, 255));
+//			pluggedTimeout.setDefaultValue(settings.getInt(PLUGGED_TIMEOUT, 255));
+//			
+//			unpluggedBrightness.setMode(settings.getInt(UNPLUGGED_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL));
+//			unpluggedBrightness.setBrightness(settings.getInt(UNPLUGGED_BRIGHTNESS, 1));
+//			//unpluggedTimeout.set
+//		}
+	 }
 }

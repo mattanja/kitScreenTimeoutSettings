@@ -16,6 +16,9 @@
 
 package de.kernetics.android.screenTimeoutSettings;
 
+import de.kernetics.android.screenTimeoutSettings.SimpleMenu;
+import de.kernetics.android.screenTimeoutSettings.SimpleMenuItem;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 

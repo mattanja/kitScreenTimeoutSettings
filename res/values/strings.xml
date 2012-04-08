@@ -27,4 +27,6 @@
     <string name="sectionUnpluggedSettings">Discharging settings</string>
     <string name="sectionInfo">Info</string>
     <string name="emptyTime">00:00:00</string>
+    <string name="automatic_brightness">Automatic brightness</string>
+    <string name="iconContentDescription">Icon</string>
 </resources>

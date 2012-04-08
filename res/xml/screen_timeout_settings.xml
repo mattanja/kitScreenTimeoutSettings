@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <Preference android:key="testPreference" android:title="Test" android:summary="00:00:00"/>
+    
+    <PreferenceCategory
+        android:title="Connected">
+        
+        <de.kernetics.android.preference.BrightnessPreference
+            android:key="pluggedBrightness"
+            android:title="Brightness"
+            android:summary="Brightness settings"
+            />
+        
+        <de.kernetics.android.preference.TimePreference
+            android:key="pluggedTimeout2"
+            android:title="Timeout"
+            android:summary="00:02:00"
+            android:defaultValue="00:02:00"
+            />
+        
+    	<Preference
+    	    android:key="pluggedTimeout"
+    	    android:title="Timeout"
+    	    android:summary="00:02:00"
+    	    android:defaultValue="00:02:00"
+    	    />
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Disconnected">
+        <de.kernetics.android.preference.BrightnessPreference
+            android:key="unpluggedBrightness"
+            android:title="Brightness"
+            android:summary="Brightness settings"
+            />
+        
+        <Preference
+            android:key="unpluggedTimeout"
+            android:summary="00:00:30"
+            android:title="Timeout"
+            />
+    </PreferenceCategory>
     
 
 </PreferenceScreen>

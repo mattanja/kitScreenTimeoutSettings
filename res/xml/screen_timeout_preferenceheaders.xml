@@ -1,16 +1,16 @@
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <header android:fragment="de.kernetics.android.screenTimeoutSettings.MainActivity$PrefsFragment"
+    <header android:fragment="de.kernetics.android.screenTimeoutSettings.MainActivity$ScreenTimeoutSettings"
             android:icon="@drawable/actionbar_compat_item"
-            android:title="Einstellungen"
-            android:summary="An example of some preferences." />
+            android:title="Screen timeout settings"
+            android:summary="Update screen timeout options and settings." />
 
     <header android:icon="@drawable/ic_action_share"
-            android:title="Intent"
-            android:summary="Launches an Intent.">
+            android:title="kernetics.de"
+            android:summary="Visit website.">
         <intent android:action="android.intent.action.VIEW"
-                android:data="http://www.android.com" />
+                android:data="http://www.kernetics.de/apps/" />
     </header>
 
 </preference-headers>

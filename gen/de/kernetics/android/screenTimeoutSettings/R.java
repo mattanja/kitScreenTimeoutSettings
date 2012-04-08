@@ -60,17 +60,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_home=0x7f020008;
         public static final int ic_launcher=0x7f020009;
         public static final int ic_menu_share=0x7f02000a;
+        public static final int ic_settings_display=0x7f02000b;
     }
     public static final class id {
         public static final int actionbar_compat=0x7f080000;
         public static final int actionbar_compat_item_refresh=0x7f080003;
         public static final int actionbar_compat_item_refresh_progress=0x7f080002;
         public static final int actionbar_compat_title=0x7f080001;
+        public static final int automatic_mode=0x7f08000a;
         public static final int checkBoxAutoSetScreenBrightnessWhenCharging=0x7f080006;
         public static final int editTextDischargingTimeout=0x7f080009;
-        public static final int menu_about=0x7f08000a;
+        public static final int icon=0x7f08000c;
+        public static final int menu_about=0x7f08000d;
         public static final int menu_refresh=0x7f080004;
         public static final int seekBarScreenBrightnessWhenCharging=0x7f080007;
+        public static final int seekbar=0x7f08000b;
         public static final int spinnerCurrentStatus=0x7f080005;
         public static final int textViewChargingTimeout=0x7f080008;
     }
@@ -78,6 +82,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int actionbar_compat=0x7f030000;
         public static final int actionbar_indeterminate_progress=0x7f030001;
         public static final int main=0x7f030002;
+        public static final int preference_dialog_brightness=0x7f030003;
+        public static final int seekbar_dialog=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
@@ -85,9 +91,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class string {
         public static final int alternate_title=0x7f090001;
         public static final int app_name=0x7f090000;
+        public static final int automatic_brightness=0x7f09000b;
         public static final int checkboxAutoSetScreenBrightness=0x7f090003;
         public static final int editTextStatusHint=0x7f090005;
         public static final int emptyTime=0x7f09000a;
+        public static final int iconContentDescription=0x7f09000c;
         public static final int menu_about=0x7f090002;
         public static final int prompt_unknown_status=0x7f090006;
         public static final int sectionInfo=0x7f090009;
