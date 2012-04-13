@@ -29,4 +29,18 @@
     <string name="emptyTime">00:00:00</string>
     <string name="automatic_brightness">Automatic brightness</string>
     <string name="iconContentDescription">Icon</string>
+    
+        <!-- TimePicker - accessibility support -->
+    <!-- Description of the button to increment the TimePicker's minute value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_minute_button">Increment minute</string>
+    <!-- Description of the button to decrement the TimePicker's minute value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_minute_button">Decrement minute</string>
+    <!-- Description of the button to increment the TimePicker's hour value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_hour_button">Increment hour</string>
+    <!-- Description of the button to decrement the TimePicker's hour value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_hour_button">Decrement hour</string>
+    <!-- Description of the button to increment the TimePicker's set PM value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_set_pm_button">Set PM</string>
+    <!-- Description of the button to decrement the TimePicker's set AM value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_set_am_button">Set AM</string>
 </resources>

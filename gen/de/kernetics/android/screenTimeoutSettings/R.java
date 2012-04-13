@@ -31,11 +31,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int borderDrawable=0x7f010005;
+        public static final int borderDrawable=0x7f010006;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int maskDrawable=0x7f010004;
+        public static final int maskDrawable=0x7f010005;
+        /**  The TimePicker style. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int timeSecondsPickerStyle=0x7f010004;
     }
     public static final class color {
         public static final int actionbar_title_color=0x7f060000;
@@ -67,12 +72,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int actionbar_compat_item_refresh=0x7f080003;
         public static final int actionbar_compat_item_refresh_progress=0x7f080002;
         public static final int actionbar_compat_title=0x7f080001;
+        public static final int amPm=0x7f08000f;
         public static final int automatic_mode=0x7f08000a;
         public static final int checkBoxAutoSetScreenBrightnessWhenCharging=0x7f080006;
         public static final int editTextDischargingTimeout=0x7f080009;
+        public static final int hour=0x7f08000d;
         public static final int icon=0x7f08000c;
-        public static final int menu_about=0x7f08000d;
+        public static final int menu_about=0x7f080010;
         public static final int menu_refresh=0x7f080004;
+        public static final int minute=0x7f08000e;
         public static final int seekBarScreenBrightnessWhenCharging=0x7f080007;
         public static final int seekbar=0x7f08000b;
         public static final int spinnerCurrentStatus=0x7f080005;
@@ -84,6 +92,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int main=0x7f030002;
         public static final int preference_dialog_brightness=0x7f030003;
         public static final int seekbar_dialog=0x7f030004;
+        public static final int time_seconds_picker=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
@@ -102,21 +111,41 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int sectionPluggedSettings=0x7f090007;
         public static final int sectionUnpluggedSettings=0x7f090008;
         public static final int textviewChargingScreenBrightness=0x7f090004;
+        /**  Description of the button to decrement the TimePicker's hour value. [CHAR LIMIT=NONE] 
+         */
+        public static final int time_picker_decrement_hour_button=0x7f090010;
+        /**  Description of the button to decrement the TimePicker's minute value. [CHAR LIMIT=NONE] 
+         */
+        public static final int time_picker_decrement_minute_button=0x7f09000e;
+        /**  Description of the button to decrement the TimePicker's set AM value. [CHAR LIMIT=NONE] 
+         */
+        public static final int time_picker_decrement_set_am_button=0x7f090012;
+        /**  Description of the button to increment the TimePicker's hour value. [CHAR LIMIT=NONE] 
+         */
+        public static final int time_picker_increment_hour_button=0x7f09000f;
+        /**  TimePicker - accessibility support 
+ Description of the button to increment the TimePicker's minute value. [CHAR LIMIT=NONE] 
+         */
+        public static final int time_picker_increment_minute_button=0x7f09000d;
+        /**  Description of the button to increment the TimePicker's set PM value. [CHAR LIMIT=NONE] 
+         */
+        public static final int time_picker_increment_set_pm_button=0x7f090011;
     }
     public static final class style {
-        public static final int ActionBar=0x7f0a0009;
-        public static final int ActionBarCompat=0x7f0a0001;
-        public static final int ActionBarCompatHomeItem=0x7f0a0007;
-        public static final int ActionBarCompatItem=0x7f0a0006;
-        public static final int ActionBarCompatItemBase=0x7f0a0002;
-        public static final int ActionBarCompatProgressIndicator=0x7f0a0003;
-        public static final int ActionBarCompatTitle=0x7f0a0005;
-        public static final int ActionBarCompatTitleBase=0x7f0a0004;
-        public static final int ActionBarTitle=0x7f0a000a;
+        public static final int ActionBar=0x7f0a000a;
+        public static final int ActionBarCompat=0x7f0a0002;
+        public static final int ActionBarCompatHomeItem=0x7f0a0008;
+        public static final int ActionBarCompatItem=0x7f0a0007;
+        public static final int ActionBarCompatItemBase=0x7f0a0003;
+        public static final int ActionBarCompatProgressIndicator=0x7f0a0004;
+        public static final int ActionBarCompatTitle=0x7f0a0006;
+        public static final int ActionBarCompatTitleBase=0x7f0a0005;
+        public static final int ActionBarTitle=0x7f0a000b;
         public static final int AppTheme=0x7f0a0000;
+        public static final int TimeSecondsPicker=0x7f0a0001;
         /**  <item name="android:textStyle">bold</item> 
          */
-        public static final int sectionStyle=0x7f0a0008;
+        public static final int sectionStyle=0x7f0a0009;
     }
     public static final class xml {
         public static final int screen_timeout_preferenceheaders=0x7f040000;
@@ -133,14 +162,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #AppTheme_actionbarCompatItemStyle de.kernetics.android.screenTimeoutSettings:actionbarCompatItemStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #AppTheme_actionbarCompatProgressIndicatorStyle de.kernetics.android.screenTimeoutSettings:actionbarCompatProgressIndicatorStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #AppTheme_actionbarCompatTitleStyle de.kernetics.android.screenTimeoutSettings:actionbarCompatTitleStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #AppTheme_timeSecondsPickerStyle de.kernetics.android.screenTimeoutSettings:timeSecondsPickerStyle}</code></td><td> The TimePicker style.</td></tr>
            </table>
            @see #AppTheme_actionbarCompatItemHomeStyle
            @see #AppTheme_actionbarCompatItemStyle
            @see #AppTheme_actionbarCompatProgressIndicatorStyle
            @see #AppTheme_actionbarCompatTitleStyle
+           @see #AppTheme_timeSecondsPickerStyle
          */
         public static final int[] AppTheme = {
-            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004
         };
         /**
           <p>This symbol is the offset where the {@link de.kernetics.android.screenTimeoutSettings.R.attr#actionbarCompatItemHomeStyle}
@@ -182,6 +214,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name android:actionbarCompatTitleStyle
         */
         public static final int AppTheme_actionbarCompatTitleStyle = 0;
+        /**
+          <p>
+          @attr description
+           The TimePicker style. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name android:timeSecondsPickerStyle
+        */
+        public static final int AppTheme_timeSecondsPickerStyle = 4;
         /** Attributes that can be used with a BezelImageView.
            <p>Includes the following attributes:</p>
            <table>
@@ -195,7 +239,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #BezelImageView_maskDrawable
          */
         public static final int[] BezelImageView = {
-            0x7f010004, 0x7f010005
+            0x7f010005, 0x7f010006
         };
         /**
           <p>This symbol is the offset where the {@link de.kernetics.android.screenTimeoutSettings.R.attr#borderDrawable}

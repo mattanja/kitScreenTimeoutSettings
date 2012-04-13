@@ -21,6 +21,9 @@
         <attr name="actionbarCompatItemStyle" format="reference" />
         <attr name="actionbarCompatItemHomeStyle" format="reference" />
         <attr name="actionbarCompatProgressIndicatorStyle" format="reference" />
+        
+        <!-- The TimePicker style. -->
+        <attr name="timeSecondsPickerStyle" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="BezelImageView">
