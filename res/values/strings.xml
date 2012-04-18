@@ -14,7 +14,7 @@
   limitations under the License.
   -->
 
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Screen Timout Settings</string>
     <string name="alternate_title">Service and settings to configure the screen timeout</string>
 
@@ -30,7 +30,22 @@
     <string name="automatic_brightness">Automatic brightness</string>
     <string name="iconContentDescription">Icon</string>
     
-        <!-- TimePicker - accessibility support -->
+    
+    <!-- NumberPicker - accessibility support -->
+    <!-- Description of the button to increment the NumberPicker value. [CHAR LIMIT=NONE] -->
+    <string name="number_picker_increment_button">Increment</string>
+    <!-- Description of the button to decrement the NumberPicker value. [CHAR LIMIT=NONE] -->
+    <string name="number_picker_decrement_button">Decrement</string>
+    <!-- Description of the tap and hold action to get into scroll mode in NumberPicker. [CHAR LIMIT=NONE] -->
+    <string name="number_picker_increment_scroll_mode"><xliff:g id="value" example="3">%s</xliff:g> tap and hold.</string>
+    <!-- Description of the scrolling action in NumberPicker. [CHAR LIMIT=NONE] -->
+    <string name="number_picker_increment_scroll_action">Slide up to increment and down to decrement.</string>
+    
+    <!-- TimePicker - accessibility support -->
+    <!-- Description of the button to increment the TimePicker's second value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_increment_second_button">Increment second</string>
+    <!-- Description of the button to decrement the TimePicker's second value. [CHAR LIMIT=NONE] -->
+    <string name="time_picker_decrement_second_button">Decrement second</string>
     <!-- Description of the button to increment the TimePicker's minute value. [CHAR LIMIT=NONE] -->
     <string name="time_picker_increment_minute_button">Increment minute</string>
     <!-- Description of the button to decrement the TimePicker's minute value. [CHAR LIMIT=NONE] -->

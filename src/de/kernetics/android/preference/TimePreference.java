@@ -11,7 +11,7 @@ public class TimePreference extends DialogPreference {
 	private int lastMinute = 0;
 	private int lastSecond = 0;
 	private TimeSecondsPicker picker = null;
-
+	
 	public static int getHour(String time) {
 		String[] pieces = time.split(":");
 
@@ -48,8 +48,6 @@ public class TimePreference extends DialogPreference {
 	@Override
 	protected View onCreateDialogView() {
 		picker = new TimeSecondsPicker(getContext());
-		picker.setIs24HourView(false);
-
 		return (picker);
 	}
 
@@ -59,7 +57,7 @@ public class TimePreference extends DialogPreference {
 
 		picker.setCurrentHour(lastHour);
 		picker.setCurrentMinute(lastMinute);
-		picker.setCurrentSecond(lastMinute);
+		picker.setCurrentSecond(lastSecond);
 	}
 
 	@Override
@@ -69,13 +67,17 @@ public class TimePreference extends DialogPreference {
 		if (positiveResult) {
 			lastHour = picker.getCurrentHour();
 			lastMinute = picker.getCurrentMinute();
+			lastSecond = picker.getCurrentSecond();
 
-			String time = String.valueOf(lastHour) + ":"
-					+ String.valueOf(lastMinute);
+			String time = TimeSecondsPicker.TWO_DIGIT_FORMATTER.format(lastHour)
+				+ ":" + TimeSecondsPicker.TWO_DIGIT_FORMATTER.format(lastMinute)
+				+ ":" + TimeSecondsPicker.TWO_DIGIT_FORMATTER.format(lastSecond);
 
 			if (callChangeListener(time)) {
 				persistString(time);
 			}
+			
+			this.setSummary(time);
 		}
 	}
 
@@ -98,7 +100,10 @@ public class TimePreference extends DialogPreference {
 			time = defaultValue.toString();
 		}
 
+		this.setSummary(time);
+		
 		lastHour = getHour(time);
 		lastMinute = getMinute(time);
+		lastSecond = getSecond(time);
 	}
 }

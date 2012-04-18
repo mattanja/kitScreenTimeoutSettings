@@ -31,6 +31,13 @@
         <item name="timeSecondsPickerStyle">@style/TimeSecondsPicker</item>
     </style>
 
+    <style name="NumberPicker">
+        <item name="android:orientation">vertical</item>
+        <item name="android:fadingEdge">vertical</item>
+        <item name="android:fadingEdgeLength">50dip</item>
+        <!-- <item name="android:flingable">false</item> -->
+    </style>
+    
     <style name="TimeSecondsPicker">
         <item name="android:layout">@layout/time_seconds_picker</item>
     </style>

@@ -24,8 +24,22 @@
         
         <!-- The TimePicker style. -->
         <attr name="timeSecondsPickerStyle" format="reference" />
+        
+        <!-- NumberPicker style. -->
+        <attr name="numberPickerStyle" format="reference" />
+        <!-- NumberPicker up button style. -->
+        <attr name="numberPickerUpButtonStyle" format="reference" />
+        <!-- NumberPicker down button style. -->
+        <attr name="numberPickerDownButtonStyle" format="reference" />
+        <!-- NumberPicker input text style. -->
+        <attr name="numberPickerInputTextStyle" format="reference" />    
     </declare-styleable>
 
+    <declare-styleable name="TimeSecondsPicker">
+        <!-- @hide The layout of the time picker. -->
+        <attr name="android:layout" />
+    </declare-styleable>
+    
     <declare-styleable name="BezelImageView">
         <attr name="maskDrawable" format="reference" />
         <attr name="borderDrawable" format="reference" />

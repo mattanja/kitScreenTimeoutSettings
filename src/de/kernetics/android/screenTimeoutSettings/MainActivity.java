@@ -19,12 +19,12 @@ package de.kernetics.android.screenTimeoutSettings;
 import java.util.List;
 
 import de.kernetics.android.preference.BrightnessPreference;
+import de.kernetics.android.preference.TimePreference;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -33,6 +33,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -42,6 +43,10 @@ import android.widget.Toast;
  */
 public class MainActivity extends PreferenceActivity {
 
+	public static final String LogTag = "MainActivity";
+
+	public AppSettings AppSettings;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -153,17 +158,18 @@ public class MainActivity extends PreferenceActivity {
     public static class ScreenTimeoutSettings extends PreferenceFragment // implements Preference.OnPreferenceChangeListener
 	{
 		private BrightnessPreference pluggedBrightness;
-		private Preference pluggedTimeout;
+		private TimePreference pluggedTimeout;
+		
 		private BrightnessPreference unpluggedBrightness;
-		private Preference unpluggedTimeout;
+		private TimePreference unpluggedTimeout;
 
-		private static final String PLUGGED_BRIGHTNESS_MODE = "pluggedBrightnessMode";
 		private static final String PLUGGED_BRIGHTNESS = "pluggedBrightness";
 		private static final String PLUGGED_TIMEOUT = "pluggedTimeout";
-		private static final String UNPLUGGED_BRIGHTNESS_MODE = "unpluggedBrightnessMode";
 		private static final String UNPLUGGED_BRIGHTNESS = "unpluggedBrightness";
 		private static final String UNPLUGGED_TIMEOUT = "unpluggedTimeout";
 
+		// TODO: Car mode switching
+		
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
@@ -173,25 +179,16 @@ public class MainActivity extends PreferenceActivity {
 	 		this.addPreferencesFromResource(R.xml.screen_timeout_settings);
 	 		
 	 		pluggedBrightness = (BrightnessPreference)findPreference(PLUGGED_BRIGHTNESS);
-	 		pluggedTimeout = (Preference)findPreference(PLUGGED_TIMEOUT);
+	 		pluggedTimeout = (TimePreference)findPreference(PLUGGED_TIMEOUT);
 	 		unpluggedBrightness = (BrightnessPreference)findPreference(UNPLUGGED_BRIGHTNESS);
-	 		unpluggedTimeout = (Preference)findPreference(UNPLUGGED_TIMEOUT);
+	 		unpluggedTimeout = (TimePreference)findPreference(UNPLUGGED_TIMEOUT);
 
-	 		//this.restorePreviousSettings();
+	 		// TODO: Set app settings in MainActivity and use settings in service
 	 		
-	 		int b = pluggedBrightness.getBrightness();
-	 		pluggedBrightness.getBrightnessMode(Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
+	 		if (Log.isLoggable(LogTag, Log.DEBUG)) {
+		 		Log.d(LogTag, "Plugged brightness: " + pluggedBrightness.getBrightness());
+		 		pluggedBrightness.getBrightnessMode(Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
+	 		}
 	 	}
-
-//		private void restorePreviousSettings() {
-//			SharedPreferences settings = getPreferenceManager().getSharedPreferences();
-//			pluggedBrightness.setMode(settings.getInt(PLUGGED_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL));
-//			pluggedBrightness.setBrightness(settings.getInt(PLUGGED_BRIGHTNESS, 255));
-//			pluggedTimeout.setDefaultValue(settings.getInt(PLUGGED_TIMEOUT, 255));
-//			
-//			unpluggedBrightness.setMode(settings.getInt(UNPLUGGED_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL));
-//			unpluggedBrightness.setBrightness(settings.getInt(UNPLUGGED_BRIGHTNESS, 1));
-//			//unpluggedTimeout.set
-//		}
 	 }
 }

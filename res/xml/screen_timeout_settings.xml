@@ -11,18 +11,12 @@
             />
         
         <de.kernetics.android.preference.TimePreference
-            android:key="pluggedTimeout2"
+            android:key="pluggedTimeout"
             android:title="Timeout"
             android:summary="00:02:00"
             android:defaultValue="00:02:00"
             />
         
-    	<Preference
-    	    android:key="pluggedTimeout"
-    	    android:title="Timeout"
-    	    android:summary="00:02:00"
-    	    android:defaultValue="00:02:00"
-    	    />
     </PreferenceCategory>
     
     <PreferenceCategory android:title="Disconnected">
@@ -32,10 +26,11 @@
             android:summary="Brightness settings"
             />
         
-        <Preference
+        <de.kernetics.android.preference.TimePreference
             android:key="unpluggedTimeout"
-            android:summary="00:00:30"
             android:title="Timeout"
+            android:summary="00:00:30"
+            android:defaultValue="00:00:30"
             />
     </PreferenceCategory>
     
