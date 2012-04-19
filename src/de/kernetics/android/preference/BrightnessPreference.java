@@ -48,6 +48,16 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
     @Override
     protected void showDialog(Bundle state) {
         super.showDialog(state);
+        
+        mRestoredOldState = false;
+    }
+
+	@Override
+    protected void onBindDialogView(View view) {
+        super.onBindDialogView(view);
+
+        mSeekBar = getSeekBar(view);
+        mSeekBar.setMax(MAXIMUM_BACKLIGHT); // - mScreenBrightnessDim);
 
         try {
 			this.loadPreference();
@@ -59,15 +69,6 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
 			this.brightnessMode = Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
 		}
         
-        mRestoredOldState = false;
-    }
-
-	@Override
-    protected void onBindDialogView(View view) {
-        super.onBindDialogView(view);
-
-        mSeekBar = getSeekBar(view);
-        mSeekBar.setMax(MAXIMUM_BACKLIGHT); // - mScreenBrightnessDim);
         mOldBrightness = getBrightness(0);
         mSeekBar.setProgress(mOldBrightness); // - mScreenBrightnessDim);
 
@@ -147,7 +148,10 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
      * Save brightness mode and brightness to single string preference.
      */
     private void savePreference() {
-    	persistString(String.format("%s:%s", this.getBrightnessMode(0), this.getBrightness()));
+    	String setting = String.format("%s:%s", this.getBrightnessMode(0), this.getBrightness());
+    	if (callChangeListener(setting)) {
+    		persistString(setting);
+    	}
 	}
 
     /**
@@ -156,15 +160,41 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
      */
     private void loadPreference() throws InvalidPreferencesFormatException {
     	String current = getPersistedString(Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL + ":255");
-    	String[] values = current.split(":");
-    	if (values.length != 2) {
-    		throw new InvalidPreferencesFormatException(getKey());
-    	}
     	
-    	this.setBrightnessMode(Integer.parseInt(values[0]));
-    	this.setBrightness(Integer.parseInt(values[1]));
+    	this.setBrightnessMode(getBrightnessMode(current));
+    	this.setBrightness(getBrightness(current));
 	}
 
+    /**
+     * Get brightness from preference string.
+     * @param preference
+     * @return
+     * @throws InvalidPreferencesFormatException
+     */
+    public static int getBrightness(String preference) throws InvalidPreferencesFormatException {
+    	String[] values = preference.split(":");
+    	if (values.length != 2) {
+    		throw new InvalidPreferencesFormatException(preference);
+    	}
+    	
+    	return Integer.parseInt(values[1]);
+    }
+
+    /**
+     * Get brightness mode from preference string.
+     * @param preference
+     * @return
+     * @throws InvalidPreferencesFormatException
+     */
+    public static int getBrightnessMode(String preference) throws InvalidPreferencesFormatException {
+    	String[] values = preference.split(":");
+    	if (values.length != 2) {
+    		throw new InvalidPreferencesFormatException(preference);
+    	}
+    	
+    	return Integer.parseInt(values[0]);
+    }
+    
 	public int getBrightness() {
     	return this.brightness;
     }

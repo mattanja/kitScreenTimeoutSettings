@@ -106,4 +106,25 @@ public class TimePreference extends DialogPreference {
 		lastMinute = getMinute(time);
 		lastSecond = getSecond(time);
 	}
+
+	/**
+	 * Get the timespan in milliseconds.
+	 * @return
+	 */
+	public int getTimespan() {
+		return 1000 * (
+			this.lastHour * 60 * 60
+			+ this.lastMinute * 60
+			+ this.lastSecond
+		);
+	}
+	
+	/**
+	 * Get timespan in milliseconds from preference string.
+	 * @param preference
+	 * @return
+	 */
+	public static int getTimespan(String preference) {
+		return 1000 * (getHour(preference) * 60 * 60 + getMinute(preference) * 60 + getSecond(preference));
+	}
 }

@@ -7,6 +7,14 @@
             android:summary="Update screen timeout options and settings." />
 
     <header android:icon="@drawable/ic_action_share"
+            android:title="(Re-)Start service"
+            android:summary="(Re-)Start service">
+        <intent android:targetPackage="de.kernetics.android.screenTimeoutSettings"
+                android:targetClass="de.kernetics.android.screenTimeoutSettings.WatchServiceActivity"
+                />
+    </header>
+    
+    <header android:icon="@drawable/ic_action_share"
             android:title="kernetics.de"
             android:summary="Visit website.">
         <intent android:action="android.intent.action.VIEW"

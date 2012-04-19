@@ -114,97 +114,88 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int textViewChargingTimeout=0x7f0a0008;
     }
     public static final class layout {
-        public static final int actionbar_compat=0x7f030000;
-        public static final int actionbar_indeterminate_progress=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int preference_dialog_brightness=0x7f030003;
-        public static final int seekbar_dialog=0x7f030004;
-        public static final int time_seconds_picker=0x7f030005;
-        public static final int time_seconds_picker_holo=0x7f030006;
+        public static final int main=0x7f030000;
+        public static final int preference_dialog_brightness=0x7f030001;
+        public static final int seekbar_dialog=0x7f030002;
+        public static final int time_seconds_picker=0x7f030003;
+        public static final int time_seconds_picker_holo=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
     }
     public static final class string {
-        public static final int alternate_title=0x7f080004;
+        public static final int alternate_title=0x7f080005;
         public static final int app_name=0x7f080003;
-        public static final int automatic_brightness=0x7f08000e;
-        public static final int checkboxAutoSetScreenBrightness=0x7f080006;
+        public static final int automatic_brightness=0x7f08000f;
+        public static final int checkboxAutoSetScreenBrightness=0x7f080007;
         /**  Default text encoding for WebSettings. 
          */
         public static final int default_text_encoding=0x7f080000;
-        public static final int editTextStatusHint=0x7f080008;
-        public static final int emptyTime=0x7f08000d;
-        public static final int iconContentDescription=0x7f08000f;
+        public static final int editTextStatusHint=0x7f080009;
+        public static final int emptyTime=0x7f08000e;
+        public static final int iconContentDescription=0x7f080010;
         /**  @hide DO NOT TRANSLATE. Control aspect ratio of lock pattern 
          */
         public static final int lock_pattern_view_aspect=0x7f080001;
-        public static final int menu_about=0x7f080005;
+        public static final int menu_about=0x7f080006;
         /**  Description of the button to decrement the NumberPicker value. [CHAR LIMIT=NONE] 
          */
-        public static final int number_picker_decrement_button=0x7f080011;
+        public static final int number_picker_decrement_button=0x7f080012;
         /**  NumberPicker - accessibility support 
  Description of the button to increment the NumberPicker value. [CHAR LIMIT=NONE] 
          */
-        public static final int number_picker_increment_button=0x7f080010;
+        public static final int number_picker_increment_button=0x7f080011;
         /**  Description of the scrolling action in NumberPicker. [CHAR LIMIT=NONE] 
          */
-        public static final int number_picker_increment_scroll_action=0x7f080013;
+        public static final int number_picker_increment_scroll_action=0x7f080014;
         /**  Description of the tap and hold action to get into scroll mode in NumberPicker. [CHAR LIMIT=NONE] 
          */
-        public static final int number_picker_increment_scroll_mode=0x7f080012;
-        public static final int prompt_unknown_status=0x7f080009;
-        public static final int sectionInfo=0x7f08000c;
-        public static final int sectionPluggedSettings=0x7f08000a;
-        public static final int sectionUnpluggedSettings=0x7f08000b;
-        public static final int textviewChargingScreenBrightness=0x7f080007;
+        public static final int number_picker_increment_scroll_mode=0x7f080013;
+        public static final int prompt_unknown_status=0x7f08000a;
+        public static final int sectionInfo=0x7f08000d;
+        public static final int sectionPluggedSettings=0x7f08000b;
+        public static final int sectionUnpluggedSettings=0x7f08000c;
+        public static final int textviewChargingScreenBrightness=0x7f080008;
         /**  Description of the button to decrement the TimePicker's hour value. [CHAR LIMIT=NONE] 
          */
-        public static final int time_picker_decrement_hour_button=0x7f080019;
+        public static final int time_picker_decrement_hour_button=0x7f08001a;
         /**  Description of the button to decrement the TimePicker's minute value. [CHAR LIMIT=NONE] 
          */
-        public static final int time_picker_decrement_minute_button=0x7f080017;
+        public static final int time_picker_decrement_minute_button=0x7f080018;
         /**  Description of the button to decrement the TimePicker's second value. [CHAR LIMIT=NONE] 
          */
-        public static final int time_picker_decrement_second_button=0x7f080015;
+        public static final int time_picker_decrement_second_button=0x7f080016;
         /**  Description of the button to decrement the TimePicker's set AM value. [CHAR LIMIT=NONE] 
          */
-        public static final int time_picker_decrement_set_am_button=0x7f08001b;
+        public static final int time_picker_decrement_set_am_button=0x7f08001c;
         /**  Description of the button to increment the TimePicker's hour value. [CHAR LIMIT=NONE] 
          */
-        public static final int time_picker_increment_hour_button=0x7f080018;
+        public static final int time_picker_increment_hour_button=0x7f080019;
         /**  Description of the button to increment the TimePicker's minute value. [CHAR LIMIT=NONE] 
          */
-        public static final int time_picker_increment_minute_button=0x7f080016;
+        public static final int time_picker_increment_minute_button=0x7f080017;
         /**  TimePicker - accessibility support 
  Description of the button to increment the TimePicker's second value. [CHAR LIMIT=NONE] 
          */
-        public static final int time_picker_increment_second_button=0x7f080014;
+        public static final int time_picker_increment_second_button=0x7f080015;
         /**  Description of the button to increment the TimePicker's set PM value. [CHAR LIMIT=NONE] 
          */
-        public static final int time_picker_increment_set_pm_button=0x7f08001a;
+        public static final int time_picker_increment_set_pm_button=0x7f08001b;
         /**  @hide DO NOT TRANSLATE. Separator between the hour and minute elements in a TimePicker widget 
          */
         public static final int time_picker_separator=0x7f080002;
+        public static final int watch_service_activity=0x7f080004;
     }
     public static final class style {
-        public static final int ActionBar=0x7f0b000b;
-        public static final int ActionBarCompat=0x7f0b0003;
-        public static final int ActionBarCompatHomeItem=0x7f0b0009;
-        public static final int ActionBarCompatItem=0x7f0b0008;
-        public static final int ActionBarCompatItemBase=0x7f0b0004;
-        public static final int ActionBarCompatProgressIndicator=0x7f0b0005;
-        public static final int ActionBarCompatTitle=0x7f0b0007;
-        public static final int ActionBarCompatTitleBase=0x7f0b0006;
-        public static final int ActionBarTitle=0x7f0b000c;
         public static final int AppTheme=0x7f0b0000;
         /**  <item name="android:flingable">false</item> 
          */
-        public static final int NumberPicker=0x7f0b0001;
-        public static final int TimeSecondsPicker=0x7f0b0002;
+        public static final int NumberPicker=0x7f0b0002;
+        public static final int ScreenTimeout=0x7f0b0001;
+        public static final int TimeSecondsPicker=0x7f0b0003;
         /**  <item name="android:textStyle">bold</item> 
          */
-        public static final int sectionStyle=0x7f0b000a;
+        public static final int sectionStyle=0x7f0b0004;
     }
     public static final class xml {
         public static final int screen_timeout_preferenceheaders=0x7f040000;

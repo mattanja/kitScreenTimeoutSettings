@@ -16,6 +16,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Screen Timout Settings</string>
+    <string name="watch_service_activity">Screen Timout Service</string>
     <string name="alternate_title">Service and settings to configure the screen timeout</string>
 
     <string name="menu_about">About</string>
